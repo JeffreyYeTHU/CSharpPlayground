@@ -32,6 +32,16 @@ namespace RedisTest
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RedisTest", Version = "v1" });
             });
+
+            services.AddStackExchangeRedisCache(options =>
+            {
+                // pull connection string form appsetting.json
+                options.Configuration = Configuration.GetConnectionString("Redis");
+
+                // prefix this name to all key, to make key collision more rare; 
+                // However, it can be argue that, differnet app should use different cache?
+                options.InstanceName = "RedisTest_";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
