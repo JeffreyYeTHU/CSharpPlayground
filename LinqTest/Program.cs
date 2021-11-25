@@ -1,52 +1,90 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace LinqTest
 {
     class Program
     {
-        static void Main (string[] args)
+        static void Main(string[] args)
         {
-            //Console.WriteLine ("Hello World!");
-            //var s = new int[] { 1, 5, 3};
-            //var sortedS = s.OrderByDescending(v => v).ToList();
-            //foreach (var item in s)
-            //{
-            //    Console.Write(item + ",");
-            //}
-            //Console.WriteLine();
-            //foreach (var item in sortedS)
-            //{
-            //    Console.Write(item + ",");
-            //}
-            //Console.WriteLine();
+            //var nums = new int[] { 1, 3, -1, -3, 5, 3, 6, 7 };
+            //var max = MaxSlidingWindow(nums, 3);
 
-            DicesProbability(2);
+            string s = "abcabcbb";
+            int maxLen = LengthOfLongestSubstring(s);
         }
 
-        public static double[] DicesProbability(int n)
+        public static int[] MaxSlidingWindow(int[] nums, int k)
         {
-            double[] dp = new double[5 * n + 1];
-            for (int i = 0; i < 6; i++)
-                dp[i] = 1 / 6.0d;
-            for (int i = 2; i <= n; i++)
+            int len = nums.Length;
+            int[] res = new int[len - k + 1];
+            int i = 0;
+            List<int> descQueue = new();
+            while (i < k)
+                Enqueue(descQueue, nums[i]);
+
+            Console.WriteLine($"i={i}");
+            for (int j = 0; j < descQueue.Count; j++)
+                Console.WriteLine($"dq[{j}]={descQueue[j]}");
+
+            res[0] = descQueue[0];
+            for (; i < len; i++)
             {
-                int preLen = 5 * (i - 1) + 1;
-                double[] temp = new double[preLen];
-                for (int j = 0; j < preLen; j++)
+                if (nums[i - k] == descQueue[0])
+                    descQueue.RemoveAt(0);
+                Enqueue(descQueue, nums[i]);
+                res[i - k + 1] = descQueue[0];
+            }
+            return res;
+        }
+
+        private static void Enqueue(List<int> q, int v)
+        {
+            if (q.Count == 0)
+            {
+                q.Add(v);
+                return;
+            }
+            int i = q.Count - 1;
+            while (i >= 0 && q[i] < v)
+                i--;
+            if (i < q.Count - 1)
+                q.RemoveRange(i + 1, q.Count - i - 1);
+            q.Add(v);
+        }
+
+        public static int LengthOfLongestSubstring(string s)
+        {
+            if (s == null)
+                return 0;
+            int left = 0, right = 0;
+            var map = new Dictionary<char, int>();
+            int start = 0;
+            int maxLen = 0;
+            while (right < s.Length)
+            {
+                // enlarge window 
+                if (!map.ContainsKey(s[right]))
+                    map.Add(s[right], 0);
+                map[s[right]]++;
+                right++;
+
+                // shink window
+                while (map[s[right]] > 1)
                 {
-                    temp[j] = dp[j];
-                    dp[j] = 0;
+                    map[s[left]]--;
+                    left++;
                 }
-                for (int j = 0; j < preLen; j++)
+
+                // update res
+                if (right - left + 1 > maxLen)
                 {
-                    for (int k = j; k < j + 6; k++)
-                    {
-                        dp[k] += temp[j] / 6.0d;
-                    }
+                    start = left;
+                    maxLen = right - left + 1;
                 }
             }
-            return dp;
+            return maxLen;
         }
     }
 }
