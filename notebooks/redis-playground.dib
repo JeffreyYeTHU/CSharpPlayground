@@ -1,0 +1,29 @@
+#!markdown
+
+开始之前，先在本地用docker运行一个redis实例。
+```docker
+docker run -itd --name redis-1 -p 6379:6379  redis:6.2.6-alpine3.15
+```
+
+#!csharp
+
+// install nuget package
+#r "nuget: StackExchange.Redis, 2.2.88"
+#r "nuget: Microsoft.Extensions.Caching.StackExchangeRedis, 6.0.0"
+
+#!csharp
+
+// add using
+using StackExchange.Redis;
+
+#!csharp
+
+var redis = ConnectionMultiplexer.Connect(
+    new ConfigurationOptions
+    {
+        EndPoints = { "localhost:6379" }
+    });
+   
+var db = redis.GetDatabase();
+var pong = await db.PingAsync();
+Console.WriteLine(pong);
