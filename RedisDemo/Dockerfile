@@ -8,10 +8,6 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY . .
-# COPY ["RedisDemo/RedisDemo.csproj", "RedisDemo/"]
-# RUN dotnet restore "RedisDemo/RedisDemo.csproj"
-# COPY . .
-# WORKDIR "/src/RedisDemo"
 RUN dotnet build -c Release -o /app/build
 
 FROM build AS publish
