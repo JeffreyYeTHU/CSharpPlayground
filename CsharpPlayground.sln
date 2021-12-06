@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31515.178
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqTest", "LinqTest\LinqTest.csproj", "{DCD4F3F5-921B-4A85-9528-94BACD7E1DF7}"
 EndProject
@@ -16,6 +16,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisTest", "RedisTest\RedisTest.csproj", "{11D0DE3D-1D38-4E9C-81B4-AB790EF5C24C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisDemo", "RedisDemo\RedisDemo.csproj", "{6D0C56D4-E198-4702-9AFB-26298E3A83A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockerBuildTest", "DockerBuildTest\DockerBuildTest.csproj", "{1E146B42-E750-4B27-B84B-DDF64E98576B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAwesomeLib", "MyAwesomeLib\MyAwesomeLib.csproj", "{A73B2D09-6907-435E-89EC-6E844E8E5CD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{6D0C56D4-E198-4702-9AFB-26298E3A83A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D0C56D4-E198-4702-9AFB-26298E3A83A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D0C56D4-E198-4702-9AFB-26298E3A83A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E146B42-E750-4B27-B84B-DDF64E98576B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E146B42-E750-4B27-B84B-DDF64E98576B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E146B42-E750-4B27-B84B-DDF64E98576B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E146B42-E750-4B27-B84B-DDF64E98576B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A73B2D09-6907-435E-89EC-6E844E8E5CD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A73B2D09-6907-435E-89EC-6E844E8E5CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A73B2D09-6907-435E-89EC-6E844E8E5CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A73B2D09-6907-435E-89EC-6E844E8E5CD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
