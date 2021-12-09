@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using MysqlPerTest.Entity;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// ef core
+string connectionString = builder.Configuration.GetConnectionString("mysql");
+builder.Services.AddDbContext<PerfTestContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 var app = builder.Build();
 
