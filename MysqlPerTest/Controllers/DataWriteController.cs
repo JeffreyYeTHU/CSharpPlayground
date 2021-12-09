@@ -10,12 +10,20 @@ namespace MysqlPerTest.Controllers
     [ApiController]
     public class DataWriteController : ControllerBase
     {
-        private readonly PerfTestContext _dbContext;
+        //private readonly PerfTestContext context;
+        private readonly IServiceProvider service;
+        private readonly ILogger<DataWriteController> logger;
 
-        public DataWriteController(PerfTestContext dbContext)
+        public DataWriteController(IServiceProvider service, ILogger<DataWriteController> logger)
         {
-            _dbContext = dbContext;
+            this.service = service;
+            this.logger = logger;
         }
+
+        //public DataWriteController(PerfTestContext context)
+        //{
+        //    this.context = context;
+        //}
 
         [HttpPost("write_studient_data")]
         public async Task WriteStudientData()
@@ -29,64 +37,74 @@ namespace MysqlPerTest.Controllers
                 builder.WithConventions();
             });
 
-            int studientCnt = 20_000_000;
-            int nextStudientId = _dbContext.Studients.Count() == 0 ? 1 :  _dbContext.Studients.Select(s => s.Id).Max() + 1;
-            int nextScoreId = _dbContext.TestScores.Count() == 0 ? 1 : _dbContext.TestScores.Select(s =>s.Id).Max() + 1;
-            for (int i = 0; i < studientCnt; i++)
+            var context = service.GetService<PerfTestContext>();
+            if (context == null)
+                throw new Exception("Cannot get dbContext");
+            int startStudientId = !context.Studients.Any() ? 1 : context.Studients.Select(s => s.Id).Max() + 1;
+            int startScoreId = !context.TestScores.Any() ? 1 : context.TestScores.Select(s => s.Id).Max() + 1;
+            await context.DisposeAsync();
+
+            // Let's make 5 concurrent task, and write 1000 each task
+            for(int r = 0; r < 50; r++)
+            {
+                int taskCnt = 20;
+                int recordOfSingleTask = 1000;
+                startStudientId += r * taskCnt * recordOfSingleTask;
+                startScoreId += startStudientId * 3;
+                var tesks = Enumerable.Range(0, taskCnt)
+                    .Select(i =>
+                    {
+                        int currStart = startStudientId + i * recordOfSingleTask;
+                        return WriteSetOfStudient(currStart, currStart + recordOfSingleTask, startScoreId + currStart * 3);
+                    });
+                await Task.WhenAll(tesks);
+            }
+        }
+
+        private async Task WriteSetOfStudient(int startStudientId, int endStudientId, int startScoreId)
+        {
+            //logger.LogInformation(
+            //    "Trying to write studients from startStudientId = {startStudientId}, endStudientId = {endStudientId - 1}, startScoreId = {startScoreId}",
+            //    startStudientId, endStudientId, startScoreId);
+            var context = service.GetService<PerfTestContext>();
+            if (context == null)
+                throw new Exception("Cannot get dbContext");
+            for (int i = startStudientId; i < endStudientId; i++)
             {
                 // studient
                 var studient = AutoFaker.Generate<Studient>();
                 int year = Random.Shared.Next(1985, 1995);
-                int month = Random.Shared.Next(1, 12);
+                int month = Random.Shared.Next(1, 13);
                 int day;
                 if (month == 2)
                     day = Random.Shared.Next(1, 28);
                 else
-                    day = Random.Shared.Next(1, 30);
+                    day = Random.Shared.Next(1, 31);
                 studient.Birthday = new DateOnly(year, month, day);
                 string[] gender = new string[] { "Male", "Famale" };
-                studient.Gender = gender[Random.Shared.Next(0, 1)];
-                studient.Id = nextStudientId;
-                nextStudientId++;
-                _dbContext.Studients.Add(studient);
+                studient.Gender = gender[Random.Shared.Next(0, 2)];
+                studient.Id = i;
+                context.Studients.Add(studient);
 
                 // score, foreach studient, make random corse scores
                 HashSet<int> courseIds = new();
-                for (int j = 0; j < 4; j++)
-                    courseIds.Add(Random.Shared.Next(1, 10));
+                for (int j = 0; j < 3; j++)
+                    courseIds.Add(Random.Shared.Next(1, 11));
                 foreach (var courseId in courseIds)
                 {
                     var testScore = new TestScore()
                     {
-                        Id = nextScoreId,
+                        Id = startScoreId,
                         StudientId = studient.Id,
                         CourseId = courseId,
                         Score = Random.Shared.Next(30, 100)
                     };
-                    nextScoreId++;
-                    _dbContext.TestScores.Add(testScore);
+                    startScoreId++;
+                    context.TestScores.Add(testScore);
                 }
-
-                // save to db every 1000 items
-                if( i % 1000 == 0)
-                    await _dbContext.SaveChangesAsync();
             }
-        }
-
-        [HttpPost("write_course_data")]
-        public async Task WriteCouseData()
-        {
-            for(int i = 1; i <= 10; i++)
-            {
-                var course = new Course
-                {
-                    Id = i,
-                    CourseName = "course" + i,
-                    TeacherName = "teacher" + i
-                };
-                _dbContext.Courses.Add(course);
-            }
-            await _dbContext.SaveChangesAsync();
+            await context.SaveChangesAsync();
+            await context.DisposeAsync();
         }
     }
 }

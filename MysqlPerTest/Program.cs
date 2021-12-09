@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 
 // ef core
 string connectionString = builder.Configuration.GetConnectionString("mysql");
-builder.Services.AddDbContext<PerfTestContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+builder.Services.AddDbContext<PerfTestContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)), contextLifetime: ServiceLifetime.Transient);
 
 var app = builder.Build();
 
