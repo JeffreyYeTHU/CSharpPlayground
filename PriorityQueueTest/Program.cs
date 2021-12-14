@@ -4,10 +4,14 @@
 var pq = new PriorityQueue<int, int>();
 for (int i = 0; i < 10; i++)
 {
-    //int p = Random.Shared.Next(0, 10);
-    int p = 4;
+    int p = Random.Shared.Next(0, 10);
+    //int p = 4;
     Console.WriteLine($"enqueue (i,p)=({i},{p})");
     pq.Enqueue(i, p);
 }
 while (pq.Count > 0)
-    Console.WriteLine(pq.Dequeue());
+{
+    int e, p;
+    pq.TryDequeue(out e, out p);
+    Console.WriteLine(e + "," + p);
+}
