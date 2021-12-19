@@ -96,5 +96,14 @@ namespace RedisDemo.Controllers
             var set = await db.SortedSetRangeByRankAsync(key);
             return set.Select(v => (string)v).ToList();
         }
+
+        [HttpPost("test_bitmap")]
+        public async Task<string> EchoBitmap(string key, int value)
+        {
+            var db = _redis.GetDatabase();
+            await db.StringSetBitAsync(key, value, true);
+            var set = await db.StringGetBitAsync(key, value);
+            return set.ToString();
+        }
     }
 }

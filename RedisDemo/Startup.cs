@@ -25,7 +25,7 @@ public class Startup
         var multiplexer = ConnectionMultiplexer.Connect(
             new ConfigurationOptions
             {
-                EndPoints = { "localhost:6379" },
+                EndPoints = { "localhost:6380" },
                 ClientName = "redisdemo_"
             });
         services.AddSingleton<IConnectionMultiplexer>(multiplexer);
