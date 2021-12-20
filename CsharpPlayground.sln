@@ -25,7 +25,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MysqlPerTest", "MysqlPerTes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PriorityQueueTest", "PriorityQueueTest\PriorityQueueTest.csproj", "{D63DCFEF-1476-4308-8273-6AE4C93DCC6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadPoolExhaustion", "ThreadPoolExhaustion\ThreadPoolExhaustion.csproj", "{FAAE97C6-2C69-425B-8669-30A74F2B274D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadPoolExhaustion", "ThreadPoolExhaustion\ThreadPoolExhaustion.csproj", "{FAAE97C6-2C69-425B-8669-30A74F2B274D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElkTest", "ElkTest\ElkTest.csproj", "{3778CFF9-0710-4C81-AC40-18BD237FBAC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCrushDump", "TestCrushDump\TestCrushDump.csproj", "{D8F9276C-008B-4055-86CA-DE4D42944C0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +85,14 @@ Global
 		{FAAE97C6-2C69-425B-8669-30A74F2B274D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAAE97C6-2C69-425B-8669-30A74F2B274D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAAE97C6-2C69-425B-8669-30A74F2B274D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3778CFF9-0710-4C81-AC40-18BD237FBAC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3778CFF9-0710-4C81-AC40-18BD237FBAC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3778CFF9-0710-4C81-AC40-18BD237FBAC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3778CFF9-0710-4C81-AC40-18BD237FBAC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8F9276C-008B-4055-86CA-DE4D42944C0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8F9276C-008B-4055-86CA-DE4D42944C0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8F9276C-008B-4055-86CA-DE4D42944C0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8F9276C-008B-4055-86CA-DE4D42944C0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
