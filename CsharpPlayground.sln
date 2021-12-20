@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyAwesomeLib", "MyAwesomeLi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MysqlPerTest", "MysqlPerTest\MysqlPerTest.csproj", "{D8ED62EA-64C5-43D7-A066-3CB49B1C863A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriorityQueueTest", "PriorityQueueTest\PriorityQueueTest.csproj", "{D63DCFEF-1476-4308-8273-6AE4C93DCC6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PriorityQueueTest", "PriorityQueueTest\PriorityQueueTest.csproj", "{D63DCFEF-1476-4308-8273-6AE4C93DCC6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadPoolExhaustion", "ThreadPoolExhaustion\ThreadPoolExhaustion.csproj", "{FAAE97C6-2C69-425B-8669-30A74F2B274D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{D63DCFEF-1476-4308-8273-6AE4C93DCC6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D63DCFEF-1476-4308-8273-6AE4C93DCC6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D63DCFEF-1476-4308-8273-6AE4C93DCC6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAAE97C6-2C69-425B-8669-30A74F2B274D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAAE97C6-2C69-425B-8669-30A74F2B274D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAAE97C6-2C69-425B-8669-30A74F2B274D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAAE97C6-2C69-425B-8669-30A74F2B274D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
