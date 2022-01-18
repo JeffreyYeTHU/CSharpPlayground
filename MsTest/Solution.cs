@@ -1,8 +1,12 @@
+using System.Linq;
+
 public class Solution{
     
     public string FindLongestParalindrome(string s){
         if (string.IsNullOrEmpty(s))
             return s;
+        int len = s.Length;
+        var codePonts = s.EnumerateRunes().Count();
         var sarr = s.ToCharArray();  // handle special char internally
         int resLeft = 0;
         int resRight = 0;

@@ -12,8 +12,12 @@ namespace MsTest
         static void Main(string[] args)
         {
             var sln = new Solution();
-            var testStr = new List<string>(){null, "", "abc", "aab", "aaa", "abcdefedcba", "abcdefedcbaa", "aaaadabccba", "**", "中国中", "//\\", "//\\\\\\"};
-            Parallel.ForEach(testStr, str => PrintRes(str, sln));  // parallel processing
+            var testStr = new List<string>(){"🐂", "😈", "//\\", null, "", "abc", "aab", "aaa", "abcdefedcba", "abcdefedcbaa", "aaaadabccba", "**", "中国中", "//\\", "//\\\\\\"};
+            // Parallel.ForEach(testStr, str => PrintRes(str, sln));  // parallel processing
+            foreach (var str in testStr)
+            {
+                PrintRes(str, sln);
+            }
         }
 
         private static void PrintRes(string str, Solution sln){
