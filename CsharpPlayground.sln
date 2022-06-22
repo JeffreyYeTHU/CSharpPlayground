@@ -27,9 +27,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PriorityQueueTest", "Priori
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadPoolExhaustion", "ThreadPoolExhaustion\ThreadPoolExhaustion.csproj", "{FAAE97C6-2C69-425B-8669-30A74F2B274D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElkTest", "ElkTest\ElkTest.csproj", "{3778CFF9-0710-4C81-AC40-18BD237FBAC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElkTest", "ElkTest\ElkTest.csproj", "{3778CFF9-0710-4C81-AC40-18BD237FBAC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCrushDump", "TestCrushDump\TestCrushDump.csproj", "{D8F9276C-008B-4055-86CA-DE4D42944C0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestCrushDump", "TestCrushDump\TestCrushDump.csproj", "{D8F9276C-008B-4055-86CA-DE4D42944C0C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThrowHelper", "ThrowHelper\ThrowHelper.csproj", "{FA7263F0-F644-4655-A2DA-8ED03FFE608C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAzureFunction", "TestAzureFunction\TestAzureFunction.csproj", "{02312CBB-9326-496A-B56A-A5153AC14E44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +97,14 @@ Global
 		{D8F9276C-008B-4055-86CA-DE4D42944C0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8F9276C-008B-4055-86CA-DE4D42944C0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8F9276C-008B-4055-86CA-DE4D42944C0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA7263F0-F644-4655-A2DA-8ED03FFE608C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA7263F0-F644-4655-A2DA-8ED03FFE608C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA7263F0-F644-4655-A2DA-8ED03FFE608C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA7263F0-F644-4655-A2DA-8ED03FFE608C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02312CBB-9326-496A-B56A-A5153AC14E44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02312CBB-9326-496A-B56A-A5153AC14E44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02312CBB-9326-496A-B56A-A5153AC14E44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02312CBB-9326-496A-B56A-A5153AC14E44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
