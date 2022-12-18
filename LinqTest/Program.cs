@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace LinqTest
 {
@@ -11,8 +14,18 @@ namespace LinqTest
             //var nums = new int[] { 1, 3, -1, -3, 5, 3, 6, 7 };
             //var max = MaxSlidingWindow(nums, 3);
 
-            string s = "abcabcbb";
-            int maxLen = LengthOfLongestSubstring(s);
+            //string s = "abcabcbb";
+            //int maxLen = LengthOfLongestSubstring(s);
+
+            //DateTime? dateTime = null;
+            //Console.WriteLine(String.Empty == dateTime.ToString());
+            //Console.WriteLine($"datetime:{dateTime}");
+
+            //var timeF = DateTime.UtcNow.ToString("yyyy-MM-dd_HH:mm:ss", CultureInfo.GetCultureInfo("en-US"));
+            //Console.WriteLine(timeF);
+
+            var res = Regex.Match("TimerTrigger_2022-08-21_03:15:19822aba45-9dd5-4cc6-9d8e-d22e5166a5fb", "-[0-9a-z]+$", RegexOptions.IgnoreCase);
+            Console.WriteLine(res);
         }
 
         public static int[] MaxSlidingWindow(int[] nums, int k)
