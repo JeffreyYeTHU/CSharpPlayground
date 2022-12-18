@@ -37,9 +37,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTimerTrigger", "TestTim
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAzureAppInsight", "TestAzureAppInsight\TestAzureAppInsight.csproj", "{4ED4D173-9F94-4584-8EB3-85CC2C165DD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAuth", "TestAuth\TestAuth.csproj", "{99844C64-E59C-4AAD-831F-39748148233C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAuth", "TestAuth\TestAuth.csproj", "{99844C64-E59C-4AAD-831F-39748148233C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApiWithAuth", "WeatherApiWithAuth\WeatherApiWithAuth.csproj", "{C7B2AE07-E245-4672-A723-70FD3A3EAC1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherApiWithAuth", "WeatherApiWithAuth\WeatherApiWithAuth.csproj", "{C7B2AE07-E245-4672-A723-70FD3A3EAC1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLogPerf", "TestLogPerf\TestLogPerf.csproj", "{3834B2F0-C91A-4C27-B7F2-B7BABE0A4DCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchmarkDemo", "BenchmarkDemo\BenchmarkDemo.csproj", "{FBF38F8C-9679-41D8-8E3C-52E12339CFB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,6 +127,14 @@ Global
 		{C7B2AE07-E245-4672-A723-70FD3A3EAC1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7B2AE07-E245-4672-A723-70FD3A3EAC1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7B2AE07-E245-4672-A723-70FD3A3EAC1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3834B2F0-C91A-4C27-B7F2-B7BABE0A4DCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3834B2F0-C91A-4C27-B7F2-B7BABE0A4DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3834B2F0-C91A-4C27-B7F2-B7BABE0A4DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3834B2F0-C91A-4C27-B7F2-B7BABE0A4DCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBF38F8C-9679-41D8-8E3C-52E12339CFB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBF38F8C-9679-41D8-8E3C-52E12339CFB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBF38F8C-9679-41D8-8E3C-52E12339CFB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBF38F8C-9679-41D8-8E3C-52E12339CFB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
