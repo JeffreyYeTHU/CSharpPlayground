@@ -1,4 +1,7 @@
-﻿namespace SaveLogStorage;
+﻿using Serilog;
+using Serilog.Formatting.Compact;
+
+namespace SaveLogStorage;
 
 public class Program
 {
@@ -7,7 +10,15 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
-
+        Log.Logger = new LoggerConfiguration()
+            .WriteTo.Console(new RenderedCompactJsonFormatter())
+            .WriteTo.File(new RenderedCompactJsonFormatter(),
+                "log3-.txt",
+                rollingInterval: RollingInterval.Day,
+                rollOnFileSizeLimit: true)
+            .CreateLogger();
+        builder.Host.UseSerilog();
+        
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
