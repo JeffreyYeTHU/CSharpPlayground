@@ -13,7 +13,7 @@ public class Program
         Log.Logger = new LoggerConfiguration()
             .WriteTo.Console(new RenderedCompactJsonFormatter())
             .WriteTo.File(new RenderedCompactJsonFormatter(),
-                "log3-.txt",
+                "log-info-.txt",
                 rollingInterval: RollingInterval.Day,
                 rollOnFileSizeLimit: true)
             .CreateLogger();
