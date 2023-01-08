@@ -9,13 +9,18 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        // Config
+        var config = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json")
+            .Build();
+
         // Add services to the container.
         Log.Logger = new LoggerConfiguration()
+            .ReadFrom.Configuration(config)
             .WriteTo.Console(new RenderedCompactJsonFormatter())
             .WriteTo.File(new RenderedCompactJsonFormatter(),
-                "log-info-.txt",
-                rollingInterval: RollingInterval.Day,
-                rollOnFileSizeLimit: true)
+                "log-warning-5call.txt")
             .CreateLogger();
         builder.Host.UseSerilog();
         

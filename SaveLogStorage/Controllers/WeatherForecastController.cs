@@ -22,6 +22,8 @@ public class WeatherForecastController : ControllerBase
     public async Task<IEnumerable<WeatherForecast>> Get()
     {
         _logger.LogInformation("This is an info log");
+        _logger.LogWarning("This is Warning log");
+        _logger.LogError("This is Error log");
         await AddAuthor();
         await UpdateAuthor();
         await RemoveAuthors();
