@@ -18,9 +18,10 @@ public class Program
         // Add services to the container.
         Log.Logger = new LoggerConfiguration()
             .ReadFrom.Configuration(config)
-            .WriteTo.Console(new RenderedCompactJsonFormatter())
-            .WriteTo.File(new RenderedCompactJsonFormatter(),
-                "log-warning-5call.txt")
+            .WriteTo.Console()
+            .WriteTo.File(
+                //new RenderedCompactJsonFormatter(),
+                "log-structure-template.txt")
             .CreateLogger();
         builder.Host.UseSerilog();
         

@@ -19,16 +19,21 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpGet(Name = "GetWeatherForecast")]
-    public async Task<IEnumerable<WeatherForecast>> Get()
+    public IEnumerable<WeatherForecast> Get()
     {
-        _logger.LogInformation("This is an info log");
-        _logger.LogWarning("This is Warning log");
-        _logger.LogError("This is Error log");
-        await AddAuthor();
-        await UpdateAuthor();
-        await RemoveAuthors();
+        _logger.LogInformation("The is a info log");
+        _logger.LogInformation("The is a info log");
+        _logger.LogInformation("The is a info log");
+        _logger.LogInformation("The is a info log");
+        _logger.LogInformation("The is a info log");
+        _logger.LogInformation("The is a info log");
+        _logger.LogInformation("The is a info log");
+        _logger.LogInformation("The is a info log");
+        _logger.LogInformation("The is a info log");
+        _logger.LogInformation("The is a info log");
+        _logger.LogInformation("The is a info log");
 
-        return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+        return Enumerable.Range(1, 2).Select(index => new WeatherForecast
         {
             Date = DateTime.Now.AddDays(index),
             TemperatureC = Random.Shared.Next(-20, 55),
@@ -37,56 +42,12 @@ public class WeatherForecastController : ControllerBase
         .ToArray();
     }
 
-    private async Task AddAuthor()
-    {
-        using var db = new DemoDbContext();
-        db.Database.EnsureCreated();
-        var authors = new List<Author>
-            {
-                new Author
-                {
-                    FirstName ="Joydip",
-                    LastName ="Kanjilal",
-                    Books = new List<Book>
-                    {
-                        new Book { Title = "Mastering C# 8.0"},
-                        new Book { Title = "Entity Framework Tutorial"},
-                        new Book { Title = "ASP.NET 4.0 Programming"}
-                    }
-                },
-                new Author
-                {
-                    FirstName ="Yashavanth",
-                    LastName ="Kanetkar",
-                    Books = new List<Book>()
-                    {
-                        new Book { Title = "Let us C"},
-                        new Book { Title = "Let us C++"},
-                        new Book { Title = "Let us C#"}
-                    }
-                }
-            };
-        db.Authors.AddRange(authors);
-        await db.SaveChangesAsync();
-    }
+    private static Random random = new Random();
 
-    private async Task UpdateAuthor()
+    private static string RandomString(int length)
     {
-        using var db = new DemoDbContext();
-        db.Database.EnsureCreated();
-        var author = db.Authors.Where(author => author.FirstName == "Yashavanth").First();
-        author.FirstName = "YASHAVANTH";
-        db.Authors.Update(author);
-        await db.SaveChangesAsync();
-    }
-
-    private async Task RemoveAuthors()
-    {
-        using var db = new DemoDbContext();
-        db.Database.EnsureCreated();
-        var authors = db.Authors.Where(author => author.FirstName != null).ToList();
-        db.RemoveRange(authors);
-        await db.SaveChangesAsync();
+        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        return new string(Enumerable.Repeat(chars, length)
+            .Select(s => s[random.Next(s.Length)]).ToArray());
     }
 }
-
