@@ -21,7 +21,7 @@ public class Program
             .WriteTo.Console()
             .WriteTo.File(
                 //new RenderedCompactJsonFormatter(),
-                "log-structure-template.txt")
+                "log-info.txt")
             .CreateLogger();
         builder.Host.UseSerilog();
         
