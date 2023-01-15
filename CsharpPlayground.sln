@@ -43,11 +43,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherApiWithAuth", "Weath
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestLogPerf", "TestLogPerf\TestLogPerf.csproj", "{3834B2F0-C91A-4C27-B7F2-B7BABE0A4DCA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BenchmarkDemo", "BenchmarkDemo\BenchmarkDemo.csproj", "{FBF38F8C-9679-41D8-8E3C-52E12339CFB6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLogLevelImpact", "TestLogLevelImpact\TestLogLevelImpact.csproj", "{89AE5D09-EDF4-48B2-96FA-8EE22B2FB95A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveLogStorage", "SaveLogStorage\SaveLogStorage.csproj", "{95860231-4E4E-4A78-91EB-4656EF0939E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestLogLevelImpact", "TestLogLevelImpact\TestLogLevelImpact.csproj", "{89AE5D09-EDF4-48B2-96FA-8EE22B2FB95A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -135,18 +131,10 @@ Global
 		{3834B2F0-C91A-4C27-B7F2-B7BABE0A4DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3834B2F0-C91A-4C27-B7F2-B7BABE0A4DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3834B2F0-C91A-4C27-B7F2-B7BABE0A4DCA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FBF38F8C-9679-41D8-8E3C-52E12339CFB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FBF38F8C-9679-41D8-8E3C-52E12339CFB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FBF38F8C-9679-41D8-8E3C-52E12339CFB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FBF38F8C-9679-41D8-8E3C-52E12339CFB6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{89AE5D09-EDF4-48B2-96FA-8EE22B2FB95A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{89AE5D09-EDF4-48B2-96FA-8EE22B2FB95A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89AE5D09-EDF4-48B2-96FA-8EE22B2FB95A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89AE5D09-EDF4-48B2-96FA-8EE22B2FB95A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{95860231-4E4E-4A78-91EB-4656EF0939E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{95860231-4E4E-4A78-91EB-4656EF0939E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{95860231-4E4E-4A78-91EB-4656EF0939E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{95860231-4E4E-4A78-91EB-4656EF0939E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
