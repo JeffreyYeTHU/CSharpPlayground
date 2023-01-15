@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace BenchmarkDemo
+namespace BenchmarkLoggerPerf
 {
     public sealed class LoggerAdapter<T>
     {

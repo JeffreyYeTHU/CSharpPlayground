@@ -2,7 +2,7 @@
 using BenchmarkDotNet.Running;
 using Microsoft.Extensions.Logging;
 
-namespace BenchmarkDemo
+namespace BenchmarkLoggerPerf
 {
     internal class Program
     {

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BenchmarkDemo", "..\BenchmarkDemo\BenchmarkDemo.csproj", "{D99B0B27-46FB-4FF2-BD0B-BF5E9720702E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BenchmarkLogerPerf", "..\BenchmarkDemo\BenchmarkLogerPerf.csproj", "{D99B0B27-46FB-4FF2-BD0B-BF5E9720702E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaveLogStorage", "..\SaveLogStorage\SaveLogStorage.csproj", "{690A4872-FEF3-4E6A-B00C-BA18C05F9B91}"
 EndProject
