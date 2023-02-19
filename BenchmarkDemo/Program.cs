@@ -6,6 +6,7 @@ namespace BenchmarkLoggerPerf
 {
     internal class Program
     {
+        // run command: dotnet run -c Release -f net6.0 --filter *LoggerPerf*
         static void Main(string[] args)
             => BenchmarkSwitcher
                 .FromAssembly(typeof(Program).Assembly)
