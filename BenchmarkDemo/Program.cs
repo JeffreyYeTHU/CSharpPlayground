@@ -43,6 +43,13 @@ namespace BenchmarkLoggerPerf
         }
 
         [Benchmark]
+        public void Log_Structure2()
+        {
+            int nxt = _rand.Next(1_000_000);
+            _logger.LogInformation("The next number is {0} at Time:{1}", nxt, DateTime.Now);
+        }
+
+        [Benchmark]
         public void Log_Structure_Debug()
         {
             int nxt = _rand.Next(1_000_000);
