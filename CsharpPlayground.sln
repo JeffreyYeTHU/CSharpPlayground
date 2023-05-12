@@ -45,7 +45,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestLogPerf", "TestLogPerf\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestLogLevelImpact", "TestLogLevelImpact\TestLogLevelImpact.csproj", "{89AE5D09-EDF4-48B2-96FA-8EE22B2FB95A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessMovieLenData", "ProcessMovieLenData\ProcessMovieLenData.csproj", "{A1C00DB7-75B9-47CC-BE90-EBAC4E72C344}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessMovieLenData", "ProcessMovieLenData\ProcessMovieLenData.csproj", "{A1C00DB7-75B9-47CC-BE90-EBAC4E72C344}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSK", "TestSK\TestSK.csproj", "{03295089-BF20-453C-BECE-46BC575CADC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +143,10 @@ Global
 		{A1C00DB7-75B9-47CC-BE90-EBAC4E72C344}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1C00DB7-75B9-47CC-BE90-EBAC4E72C344}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1C00DB7-75B9-47CC-BE90-EBAC4E72C344}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03295089-BF20-453C-BECE-46BC575CADC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03295089-BF20-453C-BECE-46BC575CADC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03295089-BF20-453C-BECE-46BC575CADC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03295089-BF20-453C-BECE-46BC575CADC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

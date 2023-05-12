@@ -28,12 +28,12 @@ namespace BenchmarkLoggerPerf
 
         private static Random _rand = new Random(0);
 
-        [Benchmark]
-        public void Log_StringInterp()
-        {
-            int nxt = _rand.Next(1_000_000);
-            _logger.LogInformation($"The next number is {nxt} at Time:{DateTime.Now}");
-        }
+        //[Benchmark]
+        //public void Log_StringInterp()
+        //{
+        //    int nxt = _rand.Next(1_000_000);
+        //    _logger.LogInformation($"The next number is {nxt} at Time:{DateTime.Now}");
+        //}
 
         [Benchmark]
         public void Log_Structure()
@@ -49,28 +49,28 @@ namespace BenchmarkLoggerPerf
             _logger.LogInformation("The next number is {0} at Time:{1}", nxt, DateTime.Now);
         }
 
-        [Benchmark]
-        public void Log_Structure_Debug()
-        {
-            int nxt = _rand.Next(1_000_000);
-            _logger.LogDebug("The next number is {Next} at Time:{Time}", nxt, DateTime.Now);
-        }
+        //[Benchmark]
+        //public void Log_Structure_Debug()
+        //{
+        //    int nxt = _rand.Next(1_000_000);
+        //    _logger.LogDebug("The next number is {Next} at Time:{Time}", nxt, DateTime.Now);
+        //}
 
-        [Benchmark]
-        public void Log_Structure_Debug_WithIf()
-        {
-            int nxt = _rand.Next(1_000_000);
-            if (_logger.IsEnabled(LogLevel.Debug))
-            {
-                _logger.LogDebug("The next number is {Next} at Time:{Time}", nxt, DateTime.Now);
-            }
-        }
+        //[Benchmark]
+        //public void Log_Structure_Debug_WithIf()
+        //{
+        //    int nxt = _rand.Next(1_000_000);
+        //    if (_logger.IsEnabled(LogLevel.Debug))
+        //    {
+        //        _logger.LogDebug("The next number is {Next} at Time:{Time}", nxt, DateTime.Now);
+        //    }
+        //}
 
-        [Benchmark]
-        public void Log_Structure_Debug_Adapter()
-        {
-            int nxt = _rand.Next(1_000_000);
-           _loggerAdapter.LogDebug("The next number is {Next} at Time:{Time}", nxt, DateTime.Now);
-        }
+        //[Benchmark]
+        //public void Log_Structure_Debug_Adapter()
+        //{
+        //    int nxt = _rand.Next(1_000_000);
+        //   _loggerAdapter.LogDebug("The next number is {Next} at Time:{Time}", nxt, DateTime.Now);
+        //}
     }
 }

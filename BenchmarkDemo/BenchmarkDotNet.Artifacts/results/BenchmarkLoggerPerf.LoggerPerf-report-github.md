@@ -8,10 +8,7 @@ BenchmarkDotNet=v0.13.2, OS=Windows 11 (10.0.22621.1265)
 
 
 ```
-|                      Method |      Mean |    Error |    StdDev |   Gen0 | Allocated |
-|---------------------------- |----------:|---------:|----------:|-------:|----------:|
-|            Log_StringInterp | 303.96 ns | 6.218 ns | 18.335 ns | 0.0215 |     135 B |
-|               Log_Structure | 103.69 ns | 2.058 ns |  5.048 ns | 0.0139 |      88 B |
-|         Log_Structure_Debug | 106.62 ns | 2.117 ns |  5.193 ns | 0.0139 |      88 B |
-|  Log_Structure_Debug_WithIf |  17.33 ns | 0.691 ns |  2.036 ns |      - |         - |
-| Log_Structure_Debug_Adapter |  46.84 ns | 1.205 ns |  3.398 ns |      - |         - |
+|         Method |     Mean |   Error |   StdDev |   Gen0 | Allocated |
+|--------------- |---------:|--------:|---------:|-------:|----------:|
+|  Log_Structure | 124.8 ns | 4.00 ns | 11.42 ns | 0.0138 |      88 B |
+| Log_Structure2 | 124.0 ns | 4.39 ns | 12.61 ns | 0.0138 |      88 B |
